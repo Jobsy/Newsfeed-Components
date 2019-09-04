@@ -113,28 +113,52 @@ const data = [
 
 */
 
-function componentsGenerator(componentsObj) {
-
-  componentsObj = {
-    divCreator: document.createElement("div"),
-    h1Creator: document.createElement("h1"),
-    pCreator: document.createElement("p"),
-    pCreator2: document.createElement("p"),
-    pCreator3: document.createElement("p"),
-    spanCreator: document.createElement("span")
-  }
-
-  const compArr = [];
-  const component = componentsObj.divCreator;
-
-  for (const key in componentsObj) {
-    compArr.push(componentsObj[key]);
-  }
-
-  for (let i = 1; i < compArr.length; i++) {
-    component.appendChild(compArr[i]);
-  }
+function componentsGenerator(componentData) {
   
-  return component;
+  // const [div, h2, fPara, sPara, tPara, span] = ["div", "h2", "fPara", "sPara", "tPara", "span"]
+  //   .map(el => document.createAttribute(el));
+  const div = document.createElement("div");
+  const h2 = document.createElement("h2");
+  const p = document.createElement("p");
+  const p1 = document.createElement("p");
+  const p2 = document.createElement("p");
+  const p3 = document.createElement("p");
+  const span = document.createElement("span");   
+  
+  h2.textContent = componentData.title
+  p.textContent = componentData.date
+  p1.textContent = componentData.firstParagraph
+  p2.textContent = componentData.secondParagraph
+  p3.textContent = componentData.thirdParagraph
+  // span.textContent = componentData.
+
+  div.appendChild(h2);
+  div.appendChild(p);
+  div.appendChild(p1);
+  div.appendChild(p2);
+  div.appendChild(p3);
+
+  return div;
 }
-// console.log(componentsGenerator())
+
+
+// function
+const component1 = componentsGenerator({
+  title: 'Professional Software Development in 2019',
+  date: 'Jan 1st, 2019',
+  firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+        hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+        Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+  secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+        hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+        hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+        hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+  thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+        Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+        Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+});
+
+console.log(component1)
+
