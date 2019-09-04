@@ -130,13 +130,22 @@ function componentsGenerator(componentData) {
   p1.textContent = componentData.firstParagraph
   p2.textContent = componentData.secondParagraph
   p3.textContent = componentData.thirdParagraph
-  // span.textContent = componentData.
+  span.textContent = componentData.toggle
+
+  div.classList.add("article")
+  p.classList.add("date")
+  span.classList.add("expandButton")
+
+  span.addEventListener("click", event => {
+    span.classList.toggle("expandButton")
+  });
 
   div.appendChild(h2);
   div.appendChild(p);
   div.appendChild(p1);
   div.appendChild(p2);
   div.appendChild(p3);
+  div.appendChild(span);
 
   return div;
 }
