@@ -112,3 +112,29 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function componentsGenerator(componentsObj) {
+
+  componentsObj = {
+    divCreator: document.createElement("div"),
+    h1Creator: document.createElement("h1"),
+    pCreator: document.createElement("p"),
+    pCreator2: document.createElement("p"),
+    pCreator3: document.createElement("p"),
+    spanCreator: document.createElement("span")
+  }
+
+  const compArr = [];
+  const component = componentsObj.divCreator;
+
+  for (const key in componentsObj) {
+    compArr.push(componentsObj[key]);
+  }
+
+  for (let i = 1; i < compArr.length; i++) {
+    component.appendChild(compArr[i]);
+  }
+  
+  return component;
+}
+// console.log(componentsGenerator())
