@@ -44,26 +44,28 @@ function compGenerator(compArr) {
   const li5 = document.createElement("li");
   const li6 = document.createElement("li");
 
+  
+  liArr = [];
+  function liGen(int = 0) {
+    for(let i = 0; i < int; i++) {
+      liArr.push(ul.appendChild(document.createElement("li")))
+    }
+  }
+  
+  liGen(6)
+  // console.log(liArr)
 
-  li1.textContent = compArr[0];
-  li2.textContent = compArr[1];
-  li3.textContent = compArr[2];
-  li4.textContent = compArr[3];
-  li5.textContent = compArr[4];
-  li6.textContent = compArr[5];
-
-
+  const comp2 = menuItems.map(function(ele, index) {
+    return (liArr[index].textContent = ele);
+  })
+  
   div.classList.add("menu");
 
   div.appendChild(ul)
-  ul.appendChild(li1);
-  ul.appendChild(li2);
-  ul.appendChild(li3);
-  ul.appendChild(li4);
-  ul.appendChild(li5);
-  ul.appendChild(li6);
 
   return div;
 }
+
+// const comp2 = menuItems.map(compGenerator);
 
 console.log(compGenerator(menuItems))
