@@ -37,14 +37,7 @@ let menuItems = [
 function compGenerator(compArr) {
   const div = document.createElement("div");
   const ul = document.createElement("ul");
-  const li1 = document.createElement("li");
-  const li2 = document.createElement("li");
-  const li3 = document.createElement("li");
-  const li4 = document.createElement("li");
-  const li5 = document.createElement("li");
-  const li6 = document.createElement("li");
-
-  
+    
   liArr = [];
   function liGen(int = 0) {
     for(let i = 0; i < int; i++) {
@@ -68,4 +61,4 @@ function compGenerator(compArr) {
 
 // const comp2 = menuItems.map(compGenerator);
 
-console.log(compGenerator(menuItems))
+console.log(compGenerator())
