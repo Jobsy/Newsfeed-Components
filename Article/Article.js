@@ -130,14 +130,14 @@ function componentsGenerator(componentData) {
   p1.textContent = componentData.firstParagraph
   p2.textContent = componentData.secondParagraph
   p3.textContent = componentData.thirdParagraph
-  span.textContent = componentData.toggle
+  span.textContent = "toggle"
 
   div.classList.add("article")
   p.classList.add("date")
   span.classList.add("expandButton")
 
   span.addEventListener("click", event => {
-    span.classList.toggle("expandButton")
+    div.classList.toggle("article-open")
   });
 
   div.appendChild(h2);
@@ -149,11 +149,33 @@ function componentsGenerator(componentData) {
 
   return div;
 }
+console.log(componentsGenerator( {
+  title: 'Professional Software Development in 2019',
+  date: 'Jan 1st, 2019',
+  firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+        hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+        Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+  secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+        hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+        hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+        hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+  thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+        Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+        Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+}))
 
 // const comp = data.map(compData => {
 //   return componentsGenerator(compData);
 // })
 const comp = data.map(componentsGenerator);
+
+const componentContainer = document.querySelector(".articles");
+
+comp.forEach((element, index) => {
+  componentContainer.appendChild(element);
+})
 
 console.log(comp)
 
