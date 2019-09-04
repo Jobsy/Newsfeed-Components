@@ -65,6 +65,7 @@ function compGenerator(compArr) {
   return div;
 }
 
+document.querySelector(".header").appendChild(compGenerator())
 // const comp2 = menuItems.map(compGenerator);
 
 console.log(compGenerator())
