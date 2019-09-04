@@ -54,7 +54,13 @@ function compGenerator(compArr) {
   
   div.classList.add("menu");
 
-  div.appendChild(ul)
+  div.appendChild(ul);
+
+
+  const menuBtn = document.querySelector(".menu-button");
+  menuBtn.addEventListener("click", e => {
+    div.classList.toggle("menu--open")
+  });
 
   return div;
 }
