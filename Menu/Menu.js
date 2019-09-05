@@ -38,34 +38,36 @@ function compGenerator(compArr) {
   const div = document.createElement("div");
   const ul = document.createElement("ul");
     
+  
   liArr = [];
-  function liGen(int = 0) {
+  function liCreator(int) {
+  
     for(let i = 0; i < int; i++) {
-      liArr.push(ul.appendChild(document.createElement("li")))
+      liArr.push(ul.appendChild(document.createElement("li")));
     }
   }
-  
-  liGen(6)
+  liCreator(menuItems.length);
   // console.log(liArr)
+
 
   const comp2 = menuItems.map(function(ele, index) {
     return (liArr[index].textContent = ele);
   })
   
-  div.classList.add("menu");
 
+  div.classList.add("menu");
   div.appendChild(ul);
 
 
   const menuBtn = document.querySelector(".menu-button");
   menuBtn.addEventListener("click", e => {
-    div.classList.toggle("menu--open")
+    div.classList.toggle("menu--open");
   });
+
 
   return div;
 }
 
-document.querySelector(".header").appendChild(compGenerator())
-// const comp2 = menuItems.map(compGenerator);
+document.querySelector(".header").appendChild(compGenerator());
 
 console.log(compGenerator())
