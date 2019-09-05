@@ -47,7 +47,6 @@ function compGenerator(compArr) {
     }
   }
   liCreator(menuItems.length);
-  // console.log(liArr)
 
 
   const comp2 = menuItems.map(function(ele, index) {
