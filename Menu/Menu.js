@@ -69,4 +69,4 @@ function compGenerator(compArr) {
 
 document.querySelector(".header").appendChild(compGenerator());
 
-console.log(compGenerator())
+// console.log(compGenerator())
